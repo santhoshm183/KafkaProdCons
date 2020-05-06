@@ -1,0 +1,26 @@
+server:
+  port: 8081
+  
+spring:
+  application:
+    name: kafka-prod-cons-example
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      auto-offset-reset: earliest
+      topic: my_topic
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: localhost:9092
+      topic: my_topic
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      
+examples:
+  kafka:
+    producer:
+      topic: my_topic
+    consumer:
+      topic: my_topic
+      groupId: group-id	
